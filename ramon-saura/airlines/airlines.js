@@ -263,5 +263,4 @@ function buyFlight(){//funcion para compra definitiva
 function deleteAuto(arrDelete){//funcion para borrar los vuelos que el usuario compra
     flights.splice(flights.map(function(elem){
         return elem.id;
-    }).indexOf(parseInt(arrDelete)),1);   
-}
+    }).indexOf(parseInt(arrDelete)),1);
