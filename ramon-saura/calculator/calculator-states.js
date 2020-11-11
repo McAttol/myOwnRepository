@@ -113,9 +113,7 @@ function printOnScreen() {
 }
 
 function calcular() {
-  if (!firstNumber || !secondNumber) {
-    return;
-  }
+
   secondNumber = currentNumber;
   let result;
   switch (operator) {
