@@ -2,11 +2,11 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "indexb.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "start": "set DEBUG=index,index:* & nodemon index.js & eslint .index --fix"
+    "start": "set DEBUG=index,index:* & nodemon indexb.js & eslint .indexb --fix"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.9",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {

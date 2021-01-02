@@ -3,8 +3,8 @@ const userRouterController = require('../controllers/userRouterController')
 
 const userRouter = express.Router();
 
-function routes(user){
-    const controller = userRouterController(user)
+function routes(User){
+    const controller = userRouterController(User)
     userRouter.route('/').get(controller.getUsersList)
 
     return userRouter;

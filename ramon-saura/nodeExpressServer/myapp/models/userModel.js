@@ -3,13 +3,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const userModel = new Schema({
-  email: { type: String },
-  email_verificated: { type: Boolean },
-  family_name: { type: String },
-  given_name: { type: String },
-  picture: { type: String },
-  sub: { type: String },
-  department: { type: String },
+  name: { type: String },
+  surname: { type: String },
+  passport: { type: String },
+  address: { type: String },
+  phone: { type: Number },
 });
 
 module.exports = mongoose.model("Users", userModel);

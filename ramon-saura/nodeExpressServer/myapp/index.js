@@ -6,20 +6,27 @@ const app = express();
 
 const port= 4200;
 
+const Users = require('./models/userModel');
+
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-mongoose.connect("mongodb://localhost/UsersQRCode")
+mongoose.connect("mongodb://localhost/UsersQRCode",{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+    useCreateIndex:true,
+});
 
 app.use("/users", (req, res)=>{
-    Users.find({}, (error, list)=>{
-        var usersList = {};
-        list.forEach((user) => {
-            usersList[user._id]= user;
-        });
-
-        res.json(usersList)
-    })
+    const list = {};
+    Users.find(list, (error, usersList)=>{
+        if(error){
+            res.status(404);
+            res.send('Not found')
+        }else{
+            res.json(usersList)
+        }
+    });
 })
 
 app.get('/', (req, res)=>{
