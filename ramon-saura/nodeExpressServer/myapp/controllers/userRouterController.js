@@ -7,7 +7,14 @@ function userController(User){
             res.json(result)
         })
     }
-    return {getUsersList}
+    function getDetail(req, res){
+        passport = req.params.passport;
+        connection.query(`SELECT * FROM users WHERE passport='${passport}'`, (err, result)=>{
+            if(err) throw err;
+            res.json(result)
+        })
+    }
+    return {getUsersList, getDetail}
 }
 
 module.exports = userController;
